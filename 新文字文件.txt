@@ -1,0 +1,42 @@
+
+import sys
+#from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication,QMainWindow,QFileDialog
+from testForm import *
+
+class MyMainWindow (QMainWindow,Ui_MainWindow):
+    def __init__(self,parent=None):
+        super(MyMainWindow,self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.openfile_New)
+        self.pushButton_2.clicked.connect(self.openfile_Old)
+
+
+
+
+
+
+
+    def openfile_New(self):
+        fileName1, _ = QFileDialog.getOpenFileName(self, "Select file", "./",
+                                                   "Bom file(*.txt *.csv *.xlsx *.xlsm *.xls);; \
+                                                   Text Files (*.txt);; \
+                                    Excel file (*.csv *.xlsx *.xlsm *.xls)")
+        self.textEdit.setText(fileName1)
+
+
+    def openfile_Old(self):
+        fileName1, _ = QFileDialog.getOpenFileName(self, "Select file", "./",
+                                                   "Bom file(*.txt *.csv *.xlsx *.xlsm *.xls);; \
+                                                   Text Files (*.txt);; \
+                                    Excel file (*.csv *.xlsx *.xlsm *.xls)")
+        self.textEdit_2.setText(fileName1)
+
+
+
+
+if __name__=="__main__":
+    app = QApplication(sys.argv)
+    myWin = MyMainWindow()
+    myWin.show()
+    sys.exit(app.exec_())
