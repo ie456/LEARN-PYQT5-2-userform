@@ -394,7 +394,7 @@ class MyWindow(QMainWindow):
     def removeRow(self):
         if self.tableView.rowCount() > 0:
             row = self.selectedRow()
-            tableView.removeRow(row)
+            self.tableView.removeRow(row)
             self.isChanged = True
 
     def addRow(self):
