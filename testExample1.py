@@ -208,6 +208,7 @@ class MyWindow(QtWidgets.QWidget):
     def finishedEdit(self):
         self.tableView.resizeColumnsToContents()
 
+
     def contextMenuEvent(self, event):
         self.menu = QtWidgets.QMenu(self)
         # copy
